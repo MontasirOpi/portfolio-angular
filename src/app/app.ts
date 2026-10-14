@@ -9,5 +9,6 @@ import { ExperienceComponent } from './features/home/components/experience/exper
 import { WorkflowComponent } from './features/home/components/workflow/workflow.component';
 import { ContactComponent } from './features/home/components/contact/contact.component';
 import { FooterComponent } from './features/home/components/footer/footer.component';
-@Component({ selector: 'app-root', standalone: true, imports: [NavComponent, HeroComponent, AboutComponent, SkillsComponent, AiSectionComponent, ProjectsComponent, ExperienceComponent, WorkflowComponent, ContactComponent, FooterComponent], templateUrl: './app.html', styleUrl: './app.scss' })
+import { SideNavComponent } from './features/home/components/side-nav/side-nav.component';
+@Component({ selector: 'app-root', standalone: true, imports: [NavComponent, SideNavComponent, HeroComponent, AboutComponent, SkillsComponent, AiSectionComponent, ProjectsComponent, ExperienceComponent, WorkflowComponent, ContactComponent, FooterComponent], templateUrl: './app.html', styleUrl: './app.scss' })
 export class App {}
