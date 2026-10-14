@@ -1,0 +1,6 @@
+import { Component } from '@angular/core';
+import { PROFILE, NAV_LINKS } from '../../../../data/portfolio.data';
+@Component({ selector: 'app-footer', standalone: true, template: `
+<footer class="footer"><div class="container foot"><div><a href="#top" class="brand">OPI — {{p.name}}</a><p>© {{year}} {{p.name}}. All rights reserved.</p></div><nav aria-label="Footer"><ul>@for(l of links; track l.href){<li><a [href]="l.href">{{l.label}}</a></li>}</ul></nav><div class="socials"><a [href]="p.github" target="_blank" rel="noopener">GitHub</a><a [href]="p.linkedin" target="_blank" rel="noopener">LinkedIn</a><a [href]="'mailto:'+p.email">Email</a></div></div></footer>`,
+styles: [`.footer{border-top:1px solid var(--border);padding-block:2rem} .foot{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:flex-start} .brand{font-family:var(--font-display);font-weight:700;text-decoration:none} .foot p{margin:0.4rem 0 0;color:var(--text-3);font-size:0.9rem} ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:1rem} a{text-decoration:none;color:var(--text-2)} a:hover{color:var(--text);text-decoration:underline} .socials{display:flex;gap:1rem}`] })
+export class FooterComponent { p = PROFILE; links = NAV_LINKS; year = new Date().getFullYear(); }
