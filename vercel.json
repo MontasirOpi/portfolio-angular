@@ -1,0 +1,1 @@
+{"$schema":"https://openapi.vercel.sh/vercel.json","buildCommand":"npm run build","framework":"angular","outputDirectory":"dist/portfolio-angular/browser","rewrites":[{"destination":"/index.html","source":"/(.*)"}]}
