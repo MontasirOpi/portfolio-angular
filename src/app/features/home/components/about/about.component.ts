@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+import { ABOUT_PARAGRAPHS, ABOUT_FACTS, ABOUT_STACK } from '../../../../data/portfolio.data';
+import { SectionHeadingComponent } from '../../../../shared/components/section-heading/section-heading.component';
+@Component({ selector: 'app-about', standalone: true, imports: [SectionHeadingComponent], template: `
+<section class="section" id="about" aria-labelledby="about-h"><div class="container">
+<app-section-heading eyebrow="About" title="Building travel products people can book with confidence" subtitle="A practical, product-minded engineer — focused on reliable booking flows, clean architecture, and maintainable code."></app-section-heading>
+<div class="grid"><div class="bio">@for(par of paras; track $index){<p>{{par}}</p>}<p class="muted"><em>Education, certifications, and awards are not listed in the source portfolio, so they are omitted here rather than invented.</em></p></div>
+<aside class="facts" aria-label="At a glance"><h3>At a glance</h3><dl>@for(f of facts; track f.label){<div class="fact"><dt>{{f.label}}</dt><dd><strong>{{f.value}}</strong><span>{{f.note}}</span></dd></div>}</dl><div class="stack"><h4>Core stack</h4><div class="chips">@for(s of stack; track s){<span class="chip">{{s}}</span>}</div></div></aside></div>
+</div></section>`,
+styles: [`.grid{display:grid;gap:2.5rem} @media(min-width:900px){.grid{grid-template-columns:1.35fr 0.85fr}} .bio p{font-size:1.05rem;line-height:1.75;color:var(--text-2)} .bio p:first-child{color:var(--text);font-size:1.12rem} .muted{font-size:0.9rem!important;color:var(--text-3)!important} .facts{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:1.5rem} .facts h3{margin:0 0 1rem;font-family:var(--font-display)} .fact{display:flex;justify-content:space-between;gap:1rem;padding:0.7rem 0;border-bottom:1px solid var(--border)} .fact:last-child{border-bottom:0} .fact dt{color:var(--text-2)} .fact dd{margin:0;text-align:right} .fact dd span{display:block;font-size:0.78rem;color:var(--text-3)} .stack{margin-top:1.25rem} .stack h4{margin:0 0 0.6rem} .chips{display:flex;flex-wrap:wrap;gap:0.4rem}`] })
+export class AboutComponent { paras = ABOUT_PARAGRAPHS; facts = ABOUT_FACTS; stack = ABOUT_STACK; }
